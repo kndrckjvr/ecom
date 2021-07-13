@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,12 +11,16 @@ class UserController extends Controller
 {
     public function home()
     {
-        return view('welcome');
+        $data['services'] = Service::all();
+        
+        return view('welcome', $data);
     }
 
     public function index()
     {
         $data['users'] = User::paginate(5);
+        
+        $data['services'] = Auth::user()->status == 2 ? Service::paginate(5) : Auth::user()->services()->paginate(5);
         
         return view('user.index', $data);
     }
