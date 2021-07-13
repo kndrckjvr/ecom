@@ -103,7 +103,7 @@
 
                             <img class="img-fluid" src="assets/img/portfolio/tools.png" alt="..." />
                       
-                        <h4 class="my-3">HOUSE REPAIR</h4>
+                        <h4 class="my-3">HOUSE REPAIRS</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
                 </div>
