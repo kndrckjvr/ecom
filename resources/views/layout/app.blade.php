@@ -178,9 +178,8 @@
                             </div>
                         </div>
                     </div>
-
-                      <!-- HOUSE REPAIR modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+ <!-- HOUSE REPAIR modal popup-->
+ <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -193,9 +192,9 @@
                                     
                                     <p class="item-intro text-muted">Choose your business and book now.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HR-1.png" alt="..." /> <br>
-                                    <p>Ace & Hammer Builders - Ace & Hammer Builders  is a construction company that delivers high quality, reliable construction services for governmental establishments. In addition, we have broad expertise with commercial clients.</p>
+                                    <p>Big Sky Home Repair - We are a licensed home repair contractor, fully insured, and experienced in renovations, making us the perfect choice to work on your home. </p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HR-2.png" alt="..." /> <br>
-                                    <p> Center Circle Design-Build - Center Circle Design-Build is an army of construction professionals, tradesmen and support staff. Our team has expertise in residential, commercial and industrial construction and the ability to deliver any scale of construction project.</p>
+                                    <p>Just Right Home Repairs - Just Right Home Repairs’ mission is to provide knowledgeable, convenient, and reasonably-priced handyman service.</p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
@@ -223,6 +222,36 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- HOUSE REPAIR modal popup-->
+ <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">HOUSE REPAINTING SERVICES</h2>
+                                    
+                                    <p class="item-intro text-muted">Choose your business and book now.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HRP-1.png" alt="..." /> <br>
+                                    <p>Comfort in Color - Comfort in Color will provide top-quality interior and exterior residential and commercial painting services. The company will seek to provide these services in the most timely manner and with an ongoing comprehensive quality control program to provide 100% customer satisfaction.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HRP-2.png" alt="..." /> <br>
+                                    <p>Brush Up My Home - Brush Up My Home offers a full line of services primarily focused on interior and exterior residential and commercial painting. The firm also provides such services as drywall plastering, acoustical ceilings, pressure washing, and others.</p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        BOOK
+                                    </button> 
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
                     <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
                         <!-- Portfolio item 4-->
                         <div class="portfolio-item">
