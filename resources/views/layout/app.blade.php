@@ -46,7 +46,7 @@
         <!-- Masthead-->
         <header class="masthead">
                 <img class="img-fluid" src="assets/header-bg.jpg" alt="..." />
-                <div class="masthead-subheading">Welcome To TOP 2 BOTTOM HOMES!</div>
+                <br>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             </div>
         </header>
@@ -109,13 +109,7 @@
                 </div>
             </div>
         </section>
-        <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="portfolio">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">BOOK A SERVICE</h2>
-                    <h3 class="section-subheading text-muted">WHAT CAN WE DO FOR YOU TODAY?</h3>
-                </div>
+    
                   <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
@@ -215,26 +209,7 @@
                 </div>
             </div>
         </section>
-                <div class="row">
-                    @foreach ($services as $data)
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#{{ str_replace(' ', '-', strtolower($data->name)) . '-' . $data->id }}">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/garden landscape.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">{{ $data->name }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
+               
         <!-- Team-->
         <section class="page-section bg-light" id="team">
             <div class="container">
@@ -363,33 +338,7 @@
                 </div>
             </div>
         </footer>
-        
-        @foreach ($services as $data)
-        <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="{{ str_replace(' ', '-', strtolower($data->name)) . '-' . $data->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">{{ $data->name }}</h2>
-                                    
-                                    <p class="item-intro text-muted">{{ 'Name: ' . $data->user->name  }}</p>
-                                    <p class="item-intro text-muted">{{ 'Location: ' . $data->location }}</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/garden landscape.jpg" alt="..." />
-                                    {{-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." /> <br>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." /> <br> --}}
-                                    <p>{{ $data->description }}</p>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        RESERVE
-                                    </button> 
-                                 <!-- Portfolio Modals USER-->  
-                                  <!-- Portfolio Modals-->
+               <!-- Portfolio Modals-->
         <!-- Portfolio item 1 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
@@ -599,9 +548,7 @@
             </div>
         </div>
 
- 
 
-                                </div>
                             </div>
                         </div>
                     </div>
