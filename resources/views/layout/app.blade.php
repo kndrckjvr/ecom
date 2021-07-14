@@ -134,7 +134,7 @@
                     </div>
 
                      <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
+        <!-- HOUSE CONSTRUCTION modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -148,12 +148,12 @@
                                     
                                     <p class="item-intro text-muted">Choose your business and book now.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HC-1.png" alt="..." /> <br>
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>Ace & Hammer Builders - Ace & Hammer Builders  is a construction company that delivers high quality, reliable construction services for governmental establishments. In addition, we have broad expertise with commercial clients.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HC-2.png" alt="..." /> <br>
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p> Center Circle Design-Build - Center Circle Design-Build is an army of construction professionals, tradesmen and support staff. Our team has expertise in residential, commercial and industrial construction and the ability to deliver any scale of construction project.</p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
-                                        RESERVE
+                                        BOOK
                                     </button> 
                                     
                                 </div>
@@ -178,6 +178,36 @@
                             </div>
                         </div>
                     </div>
+
+                      <!-- HOUSE REPAIR modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">HOUSE REPAIR SERVICES</h2>
+                                    
+                                    <p class="item-intro text-muted">Choose your business and book now.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HR-1.png" alt="..." /> <br>
+                                    <p>Ace & Hammer Builders - Ace & Hammer Builders  is a construction company that delivers high quality, reliable construction services for governmental establishments. In addition, we have broad expertise with commercial clients.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HR-2.png" alt="..." /> <br>
+                                    <p> Center Circle Design-Build - Center Circle Design-Build is an army of construction professionals, tradesmen and support staff. Our team has expertise in residential, commercial and industrial construction and the ability to deliver any scale of construction project.</p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        BOOK
+                                    </button> 
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 3-->
                         <div class="portfolio-item">
