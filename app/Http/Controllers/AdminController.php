@@ -6,6 +6,7 @@ use App\Models\Booking;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -26,6 +27,15 @@ class AdminController extends Controller
 
     public function updateBookingStatus(Request $request)
     {
+        $validator = Validator::make(['id' => $request->get('booking_id')], [
+            'id' => 'exists:App\Models\Booking,id',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('home'))
+                ->withErrors($validator);
+        }
+
         $booking = Booking::find($request->get('booking_id'));
 
         $booking->status = $request->get('status');
@@ -42,6 +52,18 @@ class AdminController extends Controller
 
         $data['date'] = date('Y-m-d H:i:s', strtotime($data['date']));
         $data['status'] = 0;
+
+        $validator = Validator::make($data, [
+            'user_id' => 'exists:App\Models\User,id',
+            'service_id' => 'exists:App\Models\Service,id',
+            'location' => 'required',
+            'date' => ['required', 'date', 'after:now']
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('home'))
+                ->withErrors($validator);
+        }
 
         Booking::create($data);
 
@@ -66,6 +88,18 @@ class AdminController extends Controller
     {
         $data = $request->only(['name', 'email', 'password', 'status', 'id']);
 
+        $validator = Validator::make($data, [
+            'id' => 'exists:App\Models\User,id',
+            'name' => ['required'],
+            'email' => ['required', 'unique:users'],
+            'status' => ['required', 'in:0,1,2,3'],
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('home'))
+                ->withErrors($validator);
+        }
+
         if (!empty($data['password'])) {
             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
         } else {
@@ -80,6 +114,17 @@ class AdminController extends Controller
     public function addUser(Request $request)
     {
         $data = $request->only(['name', 'email', 'password', 'status']);
+
+        $validator = Validator::make($data, [
+            'name' => ['required'],
+            'email' => ['required', 'unique:users'],
+            'status' => ['required', 'in:0,1,2,3'],
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('home'))
+                ->withErrors($validator);
+        }
 
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
@@ -107,6 +152,19 @@ class AdminController extends Controller
     {
         $data = $request->only(['name', 'description', 'location', 'user_id', 'id']);
 
+        $validator = Validator::make($data, [
+            'name' => ['required'],
+            'description' => ['required'],
+            'location' => ['required'],
+            'user_id' => 'exists:App\Models\User,id',
+            'id' => 'exists:App\Models\Service,id',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('home'))
+                ->withErrors($validator);
+        }
+
         Service::where('id', $data['id'])->update($data);
 
         return redirect(route('home'));
@@ -115,6 +173,18 @@ class AdminController extends Controller
     public function addService(Request $request)
     {
         $data = $request->only(['name', 'description', 'location', 'user_id']);
+
+        $validator = Validator::make($data, [
+            'name' => ['required'],
+            'description' => ['required'],
+            'location' => ['required'],
+            'user_id' => 'exists:App\Models\User,id'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('home'))
+                ->withErrors($validator);
+        }
 
         Service::create($data);
 

@@ -73,6 +73,19 @@
                         <h2 class="section-heading text-uppercase">Admin Tools</h2>
                         <h3 class="section-subheading text-muted">Have a good day!</h3>
                     </div>
+                    @auth    
+                        @if(auth()->user()->isAdmin() && $errors->count() > 0)
+                        <div class="row">
+                            <div class="alert alert-danger" role="alert">
+                                <ul class="mb-0">
+                                    @foreach ($errors->all() as $item)
+                                    <li>{{ $item }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                        @endif
+                    @endauth
                     <div class="row">
                         @include('admin.admin')
                     </div>
@@ -119,6 +132,19 @@
                     <h2 class="section-heading text-uppercase">BOOK A SERVICE</h2>
                     <h3 class="section-subheading text-muted">WHAT CAN WE DO FOR YOU TODAY?</h3>
                 </div>
+                @auth    
+                    @if(!auth()->user()->isAdmin() && $errors->count() > 0)
+                    <div class="row">
+                        <div class="alert alert-danger" role="alert">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $item)
+                                <li>{{ $item }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    @endif
+                @endauth
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 1-->
@@ -153,7 +179,7 @@
                                     <p>Ace & Hammer Builders - Ace & Hammer Builders  is a construction company that delivers high quality, reliable construction services for governmental establishments. In addition, we have broad expertise with commercial clients.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HC-2.png" alt="..." /> <br>
                                     <p> Center Circle Design-Build - Center Circle Design-Build is an army of construction professionals, tradesmen and support staff. Our team has expertise in residential, commercial and industrial construction and the ability to deliver any scale of construction project.</p>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" type="button" id="houseConstructionModalButton">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
                                     </button> 
@@ -197,7 +223,7 @@
                                     <p>Big Sky Home Repair - We are a licensed home repair contractor, fully insured, and experienced in renovations, making us the perfect choice to work on your home. </p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HR-2.png" alt="..." /> <br>
                                     <p>Just Right Home Repairs - Just Right Home Repairs’ mission is to provide knowledgeable, convenient, and reasonably-priced handyman service.</p>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" id="houseRepairModalButton" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
                                     </button> 
@@ -242,7 +268,7 @@
                                     <p>Comfort in Color - Comfort in Color will provide top-quality interior and exterior residential and commercial painting services. The company will seek to provide these services in the most timely manner and with an ongoing comprehensive quality control program to provide 100% customer satisfaction.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HRP-2.png" alt="..." /> <br>
                                     <p>Brush Up My Home - Brush Up My Home offers a full line of services primarily focused on interior and exterior residential and commercial painting. The firm also provides such services as drywall plastering, acoustical ceilings, pressure washing, and others.</p>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" id="houseRepaintingModalButton" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
                                     </button> 
@@ -287,7 +313,7 @@
                                     <p>Life-Home Movers - Life-Home movers assure that they do not just move the contents of your previous house. All appliances and decorations are properly handled ensuring that nothing will be left and damaged in order to keep the memories and home vibes stay until your next home.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HM-2.png" alt="..." /> <br>
                                     <p>Two men and a Truck - Two men and a Truck has well experienced personnels and various vehicle sizes that will fit all the content of your house if you wish to move to another location. They provide service from picking up the items to installation to the new home. </p>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" id="houseMovingServicesModalButton" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
                                     </button> 
@@ -332,7 +358,7 @@
                                     They also have the materials that can extract the contents of the septic tank whenever there’s already a need. </p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HP-2.png" alt="..." /> <br>
                                     <p>Hardcore Plumber-Hardcore plumbers ensures that all the leakage in the house are stopped. They also provide plumbing plans and estimation for those who plan to build their new home. </p>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" id="housePlumbingServicesModalButton" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
                                     </button> 
@@ -379,7 +405,7 @@
                                     <p>Lawn Fairy - Lawn fairy makes a boring, plain, and blank garden into a magical place. Whatever garden size it may be, lawn fairy artists and gardeners can definitely turn it into an eye catcher and stress reliever place in your house. </p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/GL-2.png" alt="..." /> <br>
                                     <p>Epic Gardening-Epic Gardening specializes in landscape architecture. They provide well-planned designs that could turn vacant lawn space to the favorite anytime ‘meryenda’ location in your house.</p>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" id="gardenLandscapingModalButton" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
                                     </button> 
@@ -547,8 +573,269 @@
             </div>
         </div>
        
-
-            
+        {{-- House Construction Modal --}}
+        <div class="portfolio-modal modal fade" id="houseConstructionModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h1>Booking House Construction</h1>
+                                    @auth
+                                        <form action="/users/booking/add" method="post">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label for="service_id">Service Type</label>
+                                                <select name="service_id" class="form-control">
+                                                    @foreach (\App\Models\Service::where('name', 'House Construction')->get() as $service)
+                                                        <option value="{{ $service->id }}">{{ $service->name }} - {{ $service->user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="location">Location</label>
+                                                <input type="text" name="location" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="date">Date</label>
+                                                <input type="datetime-local" name="date" class="form-control">
+                                            </div>
+                                            <div class="mt-2">
+                                                <button type="submit" class="btn btn-success">Add Booking</button>
+                                            </div>
+                                        </form>
+                                    @else
+                                        <h1>Please Login to Book</h1>
+                                    @endauth
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        {{-- House Repair Modal --}}
+        <div class="portfolio-modal modal fade" id="houseRepairModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h1>Booking House Repair</h1>
+                                    @auth
+                                        <form action="/users/booking/add" method="post">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label for="service_id">Service Type</label>
+                                                <select name="service_id" class="form-control">
+                                                    @foreach (\App\Models\Service::where('name', 'House Repair')->get() as $service)
+                                                        <option value="{{ $service->id }}">{{ $service->name }} - {{ $service->user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="location">Location</label>
+                                                <input type="text" name="location" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="date">Date</label>
+                                                <input type="datetime-local" name="date" class="form-control">
+                                            </div>
+                                            <div class="mt-2">
+                                                <button type="submit" class="btn btn-success">Add Booking</button>
+                                            </div>
+                                        </form>
+                                    @else
+                                        <h1>Please Login to Book</h1>
+                                    @endauth
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        {{-- House Repainting Modal --}}
+        <div class="portfolio-modal modal fade" id="houseRepaintingModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h1>Booking House Repainting</h1>
+                                    @auth
+                                        <form action="/users/booking/add" method="post">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label for="service_id">Service Type</label>
+                                                <select name="service_id" class="form-control">
+                                                    @foreach (\App\Models\Service::where('name', 'House Repainting')->get() as $service)
+                                                        <option value="{{ $service->id }}">{{ $service->name }} - {{ $service->user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="location">Location</label>
+                                                <input type="text" name="location" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="date">Date</label>
+                                                <input type="datetime-local" name="date" class="form-control">
+                                            </div>
+                                            <div class="mt-2">
+                                                <button type="submit" class="btn btn-success">Add Booking</button>
+                                            </div>
+                                        </form>
+                                    @else
+                                        <h1>Please Login to Book</h1>
+                                    @endauth
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        {{-- House Moving Services Modal --}}
+        <div class="portfolio-modal modal fade" id="houseMovingServicesModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h1>Booking House Moving Services</h1>
+                                    @auth
+                                        <form action="/users/booking/add" method="post">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label for="service_id">Service Type</label>
+                                                <select name="service_id" class="form-control">
+                                                    @foreach (\App\Models\Service::where('name', 'House Moving Services')->get() as $service)
+                                                        <option value="{{ $service->id }}">{{ $service->name }} - {{ $service->user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="location">Location</label>
+                                                <input type="text" name="location" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="date">Date</label>
+                                                <input type="datetime-local" name="date" class="form-control">
+                                            </div>
+                                            <div class="mt-2">
+                                                <button type="submit" class="btn btn-success">Add Booking</button>
+                                            </div>
+                                        </form>
+                                    @else
+                                        <h1>Please Login to Book</h1>
+                                    @endauth
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        {{-- House Plumbing Services Modal --}}
+        <div class="portfolio-modal modal fade" id="housePlumbingServicesModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h1>Booking House Plumbing Services</h1>
+                                    @auth
+                                        <form action="/users/booking/add" method="post">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label for="service_id">Service Type</label>
+                                                <select name="service_id" class="form-control">
+                                                    @foreach (\App\Models\Service::where('name', 'House Plumbing Services')->get() as $service)
+                                                        <option value="{{ $service->id }}">{{ $service->name }} - {{ $service->user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="location">Location</label>
+                                                <input type="text" name="location" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="date">Date</label>
+                                                <input type="datetime-local" name="date" class="form-control">
+                                            </div>
+                                            <div class="mt-2">
+                                                <button type="submit" class="btn btn-success">Add Booking</button>
+                                            </div>
+                                        </form>
+                                    @else
+                                        <h1>Please Login to Book</h1>
+                                    @endauth
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        {{-- Garden Landscaping Modal --}}
+        <div class="portfolio-modal modal fade" id="gardenLandscapingModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <h1>Booking Garden Landscaping</h1>
+                                    @auth
+                                        <form action="/users/booking/add" method="post">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label for="service_id">Service Type</label>
+                                                <select name="service_id" class="form-control">
+                                                    @foreach (\App\Models\Service::where('name', 'Garden Landscaping')->get() as $service)
+                                                        <option value="{{ $service->id }}">{{ $service->name }} - {{ $service->user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="location">Location</label>
+                                                <input type="text" name="location" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="date">Date</label>
+                                                <input type="datetime-local" name="date" class="form-control">
+                                            </div>
+                                            <div class="mt-2">
+                                                <button type="submit" class="btn btn-success">Add Booking</button>
+                                            </div>
+                                        </form>
+                                    @else
+                                        <h1>Please Login to Book</h1>
+                                    @endauth
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>Garden Landscaping
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
@@ -567,6 +854,36 @@
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
+            });
+
+            $("#houseConstructionModalButton").on('click', function() {
+                $('#portfolioModal1').modal('hide');
+                $('#houseConstructionModal').modal('show');
+            });
+
+            $("#houseRepairModalButton").on('click', function() {
+                $('#portfolioModal2').modal('hide');
+                $('#houseRepairModal').modal('show');
+            });
+
+            $("#houseRepaintingModalButton").on('click', function() {
+                $('#portfolioModal3').modal('hide');
+                $('#houseRepaintingModal').modal('show');
+            });
+
+            $("#houseMovingServicesModalButton").on('click', function() {
+                $('#portfolioModal4').modal('hide');
+                $('#houseMovingServicesModal').modal('show');
+            });
+
+            $("#housePlumbingServicesModalButton").on('click', function() {
+                $('#portfolioModal5').modal('hide');
+                $('#housePlumbingServicesModal').modal('show');
+            });
+
+            $("#gardenLandscapingModalButton").on('click', function() {
+                $('#portfolioModal6').modal('hide');
+                $('#gardenLandscapingModal').modal('show');
             });
         </script>
 
