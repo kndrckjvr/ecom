@@ -267,6 +267,36 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+
+  <!-- HOUSE MOVING modal popup-->
+  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">HOUSE MOVING SERVICES</h2>
+                                    
+                                    <p class="item-intro text-muted">Choose your business and book now.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HM-1.png" alt="..." /> <br>
+                                    <p>Life-Home Movers- </p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HM-2.png" alt="..." /> <br>
+                                    <p>Two men and a Truck- </p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        BOOK
+                                    </button> 
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
                         <!-- Portfolio item 5-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
@@ -281,6 +311,36 @@
                             </div>
                         </div>
                     </div>
+
+                  <!-- HOUSE PLUMBING modal popup-->
+  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">HOUSE PLUMBING SERVICES</h2>
+                                    
+                                    <p class="item-intro text-muted">Choose your business and book now.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HP-1.png" alt="..." /> <br>
+                                    <p>Puso Septic and Plumbing - </p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HP-2.png" alt="..." /> <br>
+                                    <p>Hardcore plumber- </p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        BOOK
+                                    </button> 
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
                     <div class="col-lg-4 col-sm-6">
                         <!-- Portfolio item 6-->
                         <div class="portfolio-item">
@@ -299,7 +359,35 @@
                 </div>
             </div>
         </section>
-               
+                <!-- GARDEN LANDSCAPING modal popup-->
+  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">GARDEN LANDSCAPING</h2>
+                                    
+                                    <p class="item-intro text-muted">Choose your business and book now.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/GL-1.png" alt="..." /> <br>
+                                    <p>Lawn Fairy -  </p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/GL-2.png" alt="..." /> <br>
+                                    <p>Epic Gardening- </p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        BOOK
+                                    </button> 
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Team-->
         <section class="page-section bg-light" id="team">
             <div class="container">
