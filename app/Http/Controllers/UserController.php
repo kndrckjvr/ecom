@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,8 +12,11 @@ class UserController extends Controller
 {
     public function home()
     {
-        $data['services'] = Service::all();
-        $data['users'] = User::paginate(5);
+        $data['services'] = Service::orderBy('created_at', 'DESC')->paginate(5, ['*'], 'services');
+        
+        $data['users'] = User::orderBy('created_at', 'DESC')->paginate(5, ['*'], 'users');
+        
+        $data['bookings'] = Booking::orderBy('date', 'DESC')->paginate(5, ['*'], 'bookings');
         
         return view('welcome', $data);
     }
