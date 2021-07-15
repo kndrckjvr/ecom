@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/portfolio/LOGO.png" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img class="img-fluid" img src="assets/img/portfolio/LOGO.png" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -55,6 +55,7 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 text-center">
+                    <img class="img-fluid" src="assets/img/portfolio/LOGO.png" alt="..." />
                         <h2 class="text-white mt-0">We've got what you need!</h2>
                         <hr class="divider divider-light" />
                         <p class="text-white-75 mb-4">LOREN IPSUM DETAILS ABOUT TOP 2 BOTTOM</p>
