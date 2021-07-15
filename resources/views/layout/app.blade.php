@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/portfolio/top 2 bottom.jpg" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/portfolio/LOGO.png" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -45,8 +45,8 @@
         </nav>
         <!-- Masthead-->
         <header class="masthead">
-                <img class="img-fluid" src="assets/header-bg.jpg" alt="..." />
-                <br>
+                <img class="img-fluid" src="assets/img/portfolio/sample.png" alt="..." />
+                <br> <br> <br>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             </div>
         </header>
@@ -92,12 +92,12 @@
                             <img class="img-fluid" src="assets/img/portfolio/hammer.png" alt="..." />
                         
                         <h4 class="my-3">HOUSE CONSTRUCTION</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <p class="text-muted">Top 2 Bottom Homes </p>
                     </div>
                     <div class="col-md-4">
                             <img class="img-fluid" src="assets/img/portfolio/paint-bucket.png" alt="..." />
                         <h4 class="my-3">HOUSE DESIGN</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <p class="text-muted">Top 2 Bottom Homes</p>
                     </div>
                     <div class="col-md-4">
 
@@ -282,9 +282,9 @@
                                     
                                     <p class="item-intro text-muted">Choose your business and book now.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HM-1.png" alt="..." /> <br>
-                                    <p>Life-Home Movers- </p>
+                                    <p>Life-Home Movers-Life-Home movers assure that they do not just move the contents of your previous house. All appliances and decorations are properly handled ensuring that nothing will be left and damaged in order to keep the memories and home vibes stay until your next home.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HM-2.png" alt="..." /> <br>
-                                    <p>Two men and a Truck- </p>
+                                    <p>Two men and a Truck-Two men and a Truck has well experienced personnels and various vehicle sizes that will fit all the content of your house if you wish to move to another location. They provide service from picking up the items to installation to the new home. </p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
@@ -326,9 +326,10 @@
                                     
                                     <p class="item-intro text-muted">Choose your business and book now.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HP-1.png" alt="..." /> <br>
-                                    <p>Puso Septic and Plumbing - </p>
+                                    <p>Puso Septic and Plumbing-Puso Septic and plumbing has well-trained plumbers that can fix any plumbing concerns. 
+                                    They also have the materials that can extract the contents of the septic tank whenever there’s already a need. </p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HP-2.png" alt="..." /> <br>
-                                    <p>Hardcore plumber- </p>
+                                    <p>Hardcore Plumber-Hardcore plumbers ensures that all the leakage in the house are stopped. They also provide plumbing plans and estimation for those who plan to build their new home. </p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
@@ -373,9 +374,9 @@
                                     
                                     <p class="item-intro text-muted">Choose your business and book now.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/GL-1.png" alt="..." /> <br>
-                                    <p>Lawn Fairy -  </p>
+                                    <p>Lawn Fairy - Lawn fairy makes a boring, plain, and blank garden into a magical place. Whatever garden size it may be, lawn fairy artists and gardeners can definitely turn it into an eye catcher and stress reliever place in your house. </p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/GL-2.png" alt="..." /> <br>
-                                    <p>Epic Gardening- </p>
+                                    <p>Epic Gardening-Epic Gardening specializes in landscape architecture. They provide well-planned designs that could turn vacant lawn space to the favorite anytime ‘meryenda’ location in your house.</p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
@@ -395,25 +396,27 @@
                     <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
                    <br>
                     <img class="img-thumbnail" src="assets/img/portfolio/GROUP.jpg" alt="..." /> <br>
+                    <br> <br>
                     <h3 class="section-subheading text-muted">RDLJ CO. is a startup company formed by a team of people who wants to help out small home services.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="assets/img/portfolio/lau.png" alt="..." />
                             <h4>Laureen De Guzman</h4>                         
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="assets/img/portfolio/rudolf.jpg" alt="..." />
                             <h4>Rudolf Edmund</h4>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                            <h4>Jeanina Nepomuceno</h4>                    
+                            <img class="mx-auto rounded-circle" src="assets/img/portfolio/jeanina.jpg" alt="..." />
+                            <h4>Jeanina Nepomuceno</h4>  
+                      </div>                  
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -430,7 +433,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Do you want to be our partner? Fill up this form!</h3>
                 </div>
                 <!-- * * * * * * * * * * * * * * *-->
                 <!-- * * SB Forms Contact Form * *-->
@@ -493,7 +496,7 @@
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2021</div>
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; RLDJ CO.TOP 2 BOTTOM HOMES</div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
