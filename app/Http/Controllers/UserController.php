@@ -12,6 +12,7 @@ class UserController extends Controller
     public function home()
     {
         $data['services'] = Service::all();
+        $data['users'] = User::paginate(5);
         
         return view('welcome', $data);
     }
