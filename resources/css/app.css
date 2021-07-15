@@ -578,8 +578,8 @@ progress {
   background-color: #fff;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
-  max-width: 100%;
-  height: auto;
+  max-width: 20%;
+  height: 20%;
 }
 
 .figure {
@@ -11339,7 +11339,6 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-{box-sizing: border-box;}
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {

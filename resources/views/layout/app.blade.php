@@ -393,7 +393,8 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-
+                   <br>
+                    <img class="img-thumbnail" src="assets/img/portfolio/GROUP.jpg" alt="..." /> <br>
                     <h3 class="section-subheading text-muted">RDLJ CO. is a startup company formed by a team of people who wants to help out small home services.</h3>
                 </div>
                 <div class="row">
@@ -422,10 +423,6 @@
                       </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
-                </div>
-            </div>
         </section>
         
         <!-- Contact-->
