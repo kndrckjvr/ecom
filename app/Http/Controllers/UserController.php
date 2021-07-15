@@ -7,6 +7,7 @@ use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -19,6 +20,31 @@ class UserController extends Controller
         $data['bookings'] = Booking::orderBy('date', 'DESC')->paginate(5, ['*'], 'bookings');
         
         return view('welcome', $data);
+    }
+
+    public function bookService(Request $request)
+    {
+        $data = $request->only(['user_id', 'service_id', 'location', 'date']);
+
+        $validator = Validator::make($data,[
+            'user_id' => 'exists:App\Models\User,id',
+            'service_id' => 'exists:App\Models\Service,id',
+            'location' => 'required',
+            'date' => ['required', 'date', 'after:now']
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('home'))
+                ->withErrors($validator);
+        }
+
+        $data['user_id'] = auth()->user()->id;
+        $data['date'] = date('Y-m-d H:i:s', strtotime($data['date']));
+        $data['status'] = 0;
+
+        Booking::create($data);
+
+        return redirect(route('home'));
     }
 
     public function index()

@@ -26,6 +26,8 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('/booking', BookingController::class);
     Route::resource('/service', ServiceController::class);
+
+    Route::post('/users/booking/add', [UserController::class, 'bookService']);
 });
 
 Route::group(['middleware' => 'admin'], function() {
