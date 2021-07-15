@@ -44,7 +44,7 @@
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead">
+        <header class="masthead" style="padding-top: 5.8rem;">
                 <img class="img-fluid" src="assets/img/portfolio/sample.png" alt="..." />
                 <br> <br> <br>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
@@ -69,11 +69,11 @@
             <section class="page-section" id="services">
                 <div class="container">
                     <div class="text-center">
-                        <h2 class="section-heading text-uppercase">Admin ka pag nakita mo itoo</h2>
-                        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                        <h2 class="section-heading text-uppercase">Admin Tools</h2>
+                        <h3 class="section-subheading text-muted">Have a good day!</h3>
                     </div>
                     <div class="row text-center">
-                        Admin works dito
+                        @include('admin.admin')
                     </div>
                 </div>
             </section>
@@ -535,7 +535,14 @@
                                         <i class="fas fa-times me-1"></i>
                                         RESERVE
                                     </button> 
-          
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
         @endforeach
 
         
