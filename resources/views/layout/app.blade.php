@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>TOP2BOTTOMHOMES</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -72,7 +73,7 @@
                         <h2 class="section-heading text-uppercase">Admin Tools</h2>
                         <h3 class="section-subheading text-muted">Have a good day!</h3>
                     </div>
-                    <div class="row text-center">
+                    <div class="row">
                         @include('admin.admin')
                     </div>
                 </div>
@@ -283,9 +284,9 @@
                                     
                                     <p class="item-intro text-muted">Choose your business and book now.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HM-1.png" alt="..." /> <br>
-                                    <p>Life-Home Movers-Life-Home movers assure that they do not just move the contents of your previous house. All appliances and decorations are properly handled ensuring that nothing will be left and damaged in order to keep the memories and home vibes stay until your next home.</p>
+                                    <p>Life-Home Movers - Life-Home movers assure that they do not just move the contents of your previous house. All appliances and decorations are properly handled ensuring that nothing will be left and damaged in order to keep the memories and home vibes stay until your next home.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HM-2.png" alt="..." /> <br>
-                                    <p>Two men and a Truck-Two men and a Truck has well experienced personnels and various vehicle sizes that will fit all the content of your house if you wish to move to another location. They provide service from picking up the items to installation to the new home. </p>
+                                    <p>Two men and a Truck - Two men and a Truck has well experienced personnels and various vehicle sizes that will fit all the content of your house if you wish to move to another location. They provide service from picking up the items to installation to the new home. </p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-times me-1"></i>
                                         BOOK
@@ -327,7 +328,7 @@
                                     
                                     <p class="item-intro text-muted">Choose your business and book now.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HP-1.png" alt="..." /> <br>
-                                    <p>Puso Septic and Plumbing-Puso Septic and plumbing has well-trained plumbers that can fix any plumbing concerns. 
+                                    <p>Puso Septic and Plumbing - Puso Septic and plumbing has well-trained plumbers that can fix any plumbing concerns. 
                                     They also have the materials that can extract the contents of the septic tank whenever there’s already a need. </p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/HP-2.png" alt="..." /> <br>
                                     <p>Hardcore Plumber-Hardcore plumbers ensures that all the leakage in the house are stopped. They also provide plumbing plans and estimation for those who plan to build their new home. </p>
@@ -511,41 +512,6 @@
             </div>
         </footer>
         
-        @foreach ($services as $data)
-        <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="{{ str_replace(' ', '-', strtolower($data->name)) . '-' . $data->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">{{ $data->name }}</h2>
-                                    
-                                    <p class="item-intro text-muted">{{ 'Name: ' . $data->user->name  }}</p>
-                                    <p class="item-intro text-muted">{{ 'Location: ' . $data->location }}</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/garden landscape.jpg" alt="..." />
-                                    {{-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." /> <br>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." /> <br> --}}
-                                    <p>{{ $data->description }}</p>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        RESERVE
-                                    </button> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-                
-        @endforeach
-
-        
         <div class="portfolio-modal modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -592,5 +558,214 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+        <script>
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        </script>
+
+        @auth
+            @if(auth()->user()->isAdmin())
+        <script>
+            $(document).ready(function(){
+                $(".editBookings").on('click', function() {
+                    $("#adminEditBookingModal").data('value', $(this).data('id'));
+                    $("#adminEditBookingModal").modal('show');
+                });
+
+                $("#adminEditBookingModal").on('show.bs.modal', function() {
+                    $('#adminEditBookingModalSpinner').removeClass('d-none');
+                    $('#adminEditBookingModalBody').addClass('d-none');
+                    let booking_id = $(this).data('value');
+                    
+                    $.ajax({
+                        type: 'GET',
+                        url: '/admin/booking',
+                        data: {
+                            booking_id: booking_id
+                        },
+                        success: function (response) {
+                            $("#adminEditBookingModalBody h2").html(response.booking.company);
+                            $("#adminEditBookingModalBody span#service_type").html(response.booking.service_type);
+                            $("#adminEditBookingModalBody span#booking_user").html(response.booking.name);
+                            $("#adminEditBookingModalBody span#current_status").html(response.booking.current_status);
+                            $("#adminEditBookingModalBody span#date").html(response.booking.date);
+
+                            $("#adminEditBookingModalSpinner").addClass('d-none');
+                            $("#adminEditBookingModalBody").removeClass('d-none');
+                        },
+                        error: function (xhr, status, error) {
+                            alert(error);
+                        },
+                    });
+                });
+
+                $("#updateStatus-check_avail").on('click', function() {
+                    let booking_id = $("#adminEditBookingModal").data('value');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/admin/booking/update_status',
+                        data: {
+                            booking_id: booking_id,
+                            status: 0
+                        },
+                        success: function (response) {
+                            window.location = window.location
+                        },
+                        error: function (xhr, status, error) {
+                            alert(error);
+                        },
+                    });
+                });
+
+                $("#updateStatus-approve").on('click', function() {
+                    let booking_id = $("#adminEditBookingModal").data('value');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/admin/booking/update_status',
+                        data: {
+                            booking_id: booking_id,
+                            status: 1
+                        },
+                        success: function (response) {
+                            window.location = window.location
+                        },
+                        error: function (xhr, status, error) {
+                            alert(error);
+                        },
+                    });
+                });
+
+                $("#updateStatus-paid").on('click', function() {
+                    let booking_id = $("#adminEditBookingModal").data('value');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/admin/booking/update_status',
+                        data: {
+                            booking_id: booking_id,
+                            status: 2
+                        },
+                        success: function (response) {
+                            window.location = window.location
+                        },
+                        error: function (xhr, status, error) {
+                            alert(error);
+                        },
+                    });
+                });
+
+                $("#updateStatus-done").on('click', function() {
+                    let booking_id = $("#adminEditBookingModal").data('value');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/admin/booking/update_status',
+                        data: {
+                            booking_id: booking_id,
+                            status: 3
+                        },
+                        success: function (response) {
+                            window.location = window.location
+                        },
+                        error: function (xhr, status, error) {
+                            alert(error);
+                        },
+                    });
+                });
+
+                $("#updateStatus-deny").on('click', function() {
+                    let booking_id = $("#adminEditBookingModal").data('value');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/admin/booking/update_status',
+                        data: {
+                            booking_id: booking_id,
+                            status: 4
+                        },
+                        success: function (response) {
+                            window.location = window.location
+                        },
+                        error: function (xhr, status, error) {
+                            alert(error);
+                        },
+                    });
+                });
+                
+                $(".editServices").on('click', function() {
+                    $("#adminEditServiceModal").data('value', $(this).data('id'));
+                    $("#adminEditServiceModal").modal('show');
+                });
+
+                $("#adminEditServiceModal").on('show.bs.modal', function() {
+                    $('#adminEditServiceModalSpinner').removeClass('d-none');
+                    $('#adminEditServiceModalBody').addClass('d-none');
+                    let service_id = $(this).data('value');
+                    
+                    $.ajax({
+                        type: 'GET',
+                        url: '/admin/service',
+                        data: {
+                            service_id: service_id
+                        },
+                        success: function (response) {
+                            $("#idEditService").val(response.service.id);
+                            $("#nameEditService").val(response.service.name);
+                            $("#locationEditService").val(response.service.location);
+                            $("#descriptionEditService").val(response.service.description);
+                            $("#user_idEditService").val(response.service.user_id);
+
+                            $("#adminEditServiceModalSpinner").addClass('d-none');
+                            $("#adminEditServiceModalBody").removeClass('d-none');
+                        },
+                        error: function (xhr, status, error) {
+                            alert(error);
+                        },
+                    });
+                });
+                
+                $(".editUser").on('click', function() {
+                    $("#adminEditUserModal").data('value', $(this).data('id'));
+                    $("#adminEditUserModal").modal('show');
+                });
+
+                $("#adminEditUserModal").on('show.bs.modal', function() {
+                    $('#adminEditUserModalSpinner').removeClass('d-none');
+                    $('#adminEditUserModalBody').addClass('d-none');
+                    let user_id = $(this).data('value');
+                    
+                    $.ajax({
+                        type: 'GET',
+                        url: '/admin/user',
+                        data: {
+                            user_id: user_id
+                        },
+                        success: function (response) {
+                            $("#idEditUser").val(response.user.id);
+                            $("#nameEditUser").val(response.user.name);
+                            $("#emailEditUser").val(response.user.email);
+                            $("#statusEditUser").val(response.user.status);
+
+                            $("#adminEditUserModalSpinner").addClass('d-none');
+                            $("#adminEditUserModalBody").removeClass('d-none');
+                        },
+                        error: function (xhr, status, error) {
+                            alert(error);
+                        },
+                    });
+                });
+            });
+        </script>
+            @endif
+        @endauth
     </body>
 </html>

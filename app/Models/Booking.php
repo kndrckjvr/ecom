@@ -10,8 +10,10 @@ class Booking extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'location'
+        'name', 'location', 'user_id', 'service_id', 'date'
     ];
+
+    public $timestamps = true;
 
     public function user()
     {
@@ -21,5 +23,22 @@ class Booking extends Model
     public function service()
     {
         return $this->belongsTo(Service::class);
+    }
+
+    public function getStatusAttribute($status)
+    {
+        switch ($status) {
+            case 1:
+                return "Approved";
+            case 2:
+                return "Paid";
+            case 3:
+                return "Done";
+            case 4:
+                return "Deny";
+            case 0:
+            default:
+                return "Checking for Availability";
+        }
     }
 }
