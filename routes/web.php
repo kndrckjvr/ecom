@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\UserController;
@@ -25,8 +26,22 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('/booking', BookingController::class);
     Route::resource('/service', ServiceController::class);
+
+    Route::post('/users/booking/add', [UserController::class, 'bookService']);
 });
 
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    
+    Route::get('/admin/booking', [AdminController::class, 'getBooking']);
+    Route::post('/admin/booking/add', [AdminController::class, 'addBooking']);
+    Route::post('/admin/booking/update_status', [AdminController::class, 'updateBookingStatus']);
+
+    Route::get('/admin/user', [AdminController::class, 'getUser']);
+    Route::post('/admin/user/update', [AdminController::class, 'updateUser']);
+    Route::post('/admin/user/add', [AdminController::class, 'addUser']);
+    
+    Route::get('/admin/service', [AdminController::class, 'getService']);
+    Route::post('/admin/service/update', [AdminController::class, 'updateService']);
+    Route::post('/admin/service/add', [AdminController::class, 'addService']);
 });
