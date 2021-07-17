@@ -59,7 +59,7 @@
                     <img class="img-fluid" src="assets/img/portfolio/LOGO.png" alt="..." />
                         <h2 class="text-white mt-0">We've got what you need!</h2>
                         <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">LOREN IPSUM DETAILS ABOUT TOP 2 BOTTOM</p>
+                        <p class="text-white-75 mb-4">TOP 2 BOTTOM HOMES is a one stop shop for your housing needs,from house construction to garden landscaping. Our partners are recognized businesses to provide high quality results for you!</p>
                         <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">YOU ASK, TOP 2 BOTTOM HOMES PROVIDE</h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
@@ -107,19 +107,19 @@
                             <img class="img-fluid" src="assets/img/portfolio/hammer.png" alt="..." />
                         
                         <h4 class="my-3">HOUSE CONSTRUCTION</h4>
-                        <p class="text-muted">Top 2 Bottom Homes </p>
+                        <p class="text-muted">Top 2 Bottom Homes offers House Construction needs to help you start your dream house, our partners are well known construction firms. </p>
                     </div>
                     <div class="col-md-4">
                             <img class="img-fluid" src="assets/img/portfolio/paint-bucket.png" alt="..." />
                         <h4 class="my-3">HOUSE DESIGN</h4>
-                        <p class="text-muted">Top 2 Bottom Homes</p>
+                        <p class="text-muted">Top 2 Bottom Homes offers House Designing services to light up and upgrade your homes into your dream house.</p>
                     </div>
                     <div class="col-md-4">
 
                             <img class="img-fluid" src="assets/img/portfolio/tools.png" alt="..." />
                       
                         <h4 class="my-3">HOUSE REPAIRS</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <p class="text-muted">TOP 2 BOTTOM HOMES offer House Repair services from our trusted partners to provide quality and sure repairing and fixing services for any problems in your house.<p>
                     </div>
                 </div>
             </div>
@@ -449,7 +449,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="assets/img/portfolio/daphny.jpg" alt="..." />
                             <h4>Daphne Clarice Tonog</h4>
                       </div>
                     </div>
